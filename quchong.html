@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    //去重1
+    var arr=[1,4,2,1,4,6,3,6,4];
+    var arr1=[];
+    for(var i=0;i<arr.length;i++){
+        if(arr1.indexOf(arr[i])==-1){
+            arr1.push(arr[i]);
+        }
+    }
+    console.log(arr1);
+
+    //去重2
+    function qc(val){
+        var arr2=[];
+        for(var i=0;i<val.length;i++){
+            if(arr2.indexOf(val[i])==-1){
+                arr2.push(val[i]);
+            }
+        }
+        return arr2;
+    }
+    console.log(qc([4,6,3,4,6,2,8,9,6]));
+</script>
+</body>
+</html>

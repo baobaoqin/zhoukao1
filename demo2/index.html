@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Document</title>
+    <!--<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">-->
+    <link type="text/css" rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <header class="header">
+        <span>微信</span>
+        <div class="font">
+            <i class="fa fa-search sou"></i>
+            <i class="fa fa-plus jia"></i>
+        </div>
+    </header>
+    <section class="main">
+        <ul id="list">
+            <li>
+                <a><img src="img/img1.jpg" alt=""></a>
+                <div class="info">
+                    <span><b>游必有方</b><time>8:21</time></span>
+                    <p>好</p>
+                </div>
+                <div class="remove">
+                    删除
+                </div>
+            </li>
+            <li>
+                <a><img src="img/img2.jpg" alt=""></a>
+                <div class="info">
+                    <span><b>游必有方</b><time>8:21</time></span>
+                    <p>好</p>
+                </div>
+                <div class="remove">
+                    删除
+                </div>
+            </li>
+            <li>
+                <a><img src="img/img3.jpg" alt=""></a>
+                <div class="info">
+                    <span><b>游必有方</b><time>8:21</time></span>
+                    <p>好</p>
+                </div>
+                <div class="remove">
+                    删除
+                </div>
+            </li>
+            <li>
+                <a><img src="img/img4.jpg" alt=""></a>
+                <div class="info">
+                    <span><b>游必有方</b><time>8:21</time></span>
+                    <p>好</p>
+                </div>
+                <div class="remove">
+                    删除
+                </div>
+            </li>
+            <li>
+                <a><img src="img/img5.jpg" alt=""></a>
+                <div class="info">
+                    <span><b>游必有方</b><time>8:21</time></span>
+                    <p>好</p>
+                </div>
+                <div class="remove">
+                    删除
+                </div>
+            </li>
+            <li>
+                <a><img src="img/img6.jpg" alt=""></a>
+                <div class="info">
+                    <span><b>游必有方</b><time>8:21</time></span>
+                    <p>好</p>
+                </div>
+                <div class="remove">
+                    删除
+                </div>
+            </li>
+
+        </ul>
+        <div class="audio">
+            <img src="img/music.jpg" alt="">
+            <audio src="music/smallluck.mp3" id="playmusic"></audio>
+            <i class="fa fa-play" id="btn"></i>
+        </div>
+    </section>
+    <footer class="footer">
+        <ul>
+            <li class="on">
+                <i class="fa fa-comment"></i>
+                <span>微信</span>
+            </li>
+            <li>
+                <i class="fa fa-users"></i>
+                <span>通讯录</span>
+            </li>
+            <li>
+                <i class="fa fa-bandcamp"></i>
+                <span>发现</span>
+            </li>
+            <li>
+                <i class="fa fa-user-o"></i>
+                <span>我</span>
+            </li>
+        </ul>
+    </footer>
+    <!--<script type="text/javascript" src="js/swiper.js"></script>
+    <script type="text/javascript" src="js/jquery1.7.js"></script>-->
+    <script type="text/javascript" src="js/main.min.js"></script>
+    <script type="text/javascript">
+        var timer=null;
+        var count=0;
+        var list = document.getElementById('list');
+        var ele = list.getElementsByTagName('li');
+        for(let i=0;i<ele.length;i++){
+            new Swiper(ele[i],function(){
+                ele[i].style.left="-.7rem";
+            },function(){
+                ele[i].style.left="0";
+            });
+        }
+
+        var playmusic=document.getElementById('playmusic');
+        $("#btn").click(function(){
+            $(this).toggleClass("fa-pause");
+            if($(this).hasClass('fa-pause')){
+                playmusic.play();
+                auto();
+            }else{
+                playmusic.pause();
+                clearInterval(timer);
+            }
+        });
+        function auto(){
+            timer=setInterval(function(){
+                count++;
+                $(".audio img").css('transform','rotate('+count+'deg)')
+            },100)
+        }
+    </script>
+</body>
+</html>
